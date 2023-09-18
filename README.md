@@ -60,7 +60,7 @@ Open your web browser and go to `http://127.0.0.1:8000/`.
 
 ## 🤝 Contributing
 
-We welcome contributions of all kinds from the community. Whether you're fixing a bug, adding a new feature, or updating documentation, your efforts are much appreciated! Before you start, please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+We welcome contributions of all kinds from the community. Whether you're fixing a bug, adding a new feature, or updating documentation, your efforts are much appreciated! 
 
 ## 📜 License
 
