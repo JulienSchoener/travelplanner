@@ -1,6 +1,6 @@
 # 🌍 Travel Planner ✈️
 
-Welcome to Travel Planner, your new travel companion! It's your personal schedule assistant in one place. Say goodbye to the stress of juggling multiple apps and websites. Your flights, hotel bookings, and meetings with business partners can now all be managed seamlessly from one central location. 
+Welcome to Travel Planner, your new travel companion! It's your personal schedule assistant in one place. Say goodbye to the stress of juggling multiple apps and websites. Your flights, hotel bookings, and meetings can now all be managed seamlessly from one central location and shared with business partners. 
 
 ## 🚀 Features
 
@@ -64,4 +64,4 @@ We welcome contributions of all kinds from the community. Whether you're fixing 
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for more details shortly.
+This project is licensed under the MIT License. 
