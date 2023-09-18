@@ -1,6 +1,6 @@
 # 🌍 Travel Planner ✈️
 
-Welcome to Travel Planner, your new travel companion! This is not just another web application; it's your personal travel assistant, designed to manage all your travel needs in one place. Say goodbye to the stress of juggling multiple apps and websites. Your flights, hotel bookings, and meetings with business partners can now all be managed seamlessly from one central location. 
+Welcome to Travel Planner, your new travel companion! It's your personal schedule assistant in one place. Say goodbye to the stress of juggling multiple apps and websites. Your flights, hotel bookings, and meetings with business partners can now all be managed seamlessly from one central location. 
 
 ## 🚀 Features
 
