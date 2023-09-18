@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      body {
+        background-color: #f0fff0; /* Honeydew color */
+        color: #000080; /* Dark Blue */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        text-align: center;
+        border: 2px solid #000080; /* Dark Blue */
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Travel Planner</h1>
+
+      <h2>Schedule of {{ business_partner.name }}</h2>
+
+      <h3>Flights</h3>
+      <ul>
+        {% for flight in flights %}
+        <li>
+          {{ flight.flight_number }}: {{ flight.departure_location }} to 
+          {{ flight.arrival_location }} from {{ flight.departure|date:"F j, Y, g a" }} to 
+          {{ flight.arrival|date:"F j, Y, g a" }}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h3>Hotel Bookings</h3>
+      <ul>
+        {% for hotel_booking in hotel_bookings %}
+        <li>
+          {{ hotel_booking.hotel_name }}: {{ hotel_booking.location }} from 
+          {{ hotel_booking.check_in_date|date:"F j, Y, g a" }} to 
+          {{ hotel_booking.check_out_date|date:"F j, Y, g a" }}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h3>Meetings</h3>
+      <ul>
+        {% for meeting in meetings %}
+        <li>
+          {{ meeting.title }}: {{ meeting.location }} from 
+          {{ meeting.start_time|date:"F j, Y, g a" }} to 
+          {{ meeting.end_time|date:"F j, Y, g a" }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
