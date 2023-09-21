@@ -12,3 +12,16 @@ dev-migrate:
 
 dev-showmigrations:
 	python manage.py showmigrations --settings=config.settings.dev
+
+dev-sqlmigrate:
+	python manage.py sqlmigrate $(app) $(m) --settings=config.settings.dev
+
+dev-shell:
+	python manage.py shell --settings=config.settings.dev
+
+dev-rollback:
+	python manage.py rollback $(app) $(m) --settings=config.settings.dev
+
+v = 1
+dev-test:
+	python manage.py test -v $(v) --settings=config.settings.dev

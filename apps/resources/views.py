@@ -29,7 +29,7 @@ def home(request):
         'hotel_bookings': hotel_bookings,
         'meetings': meetings,
     }
-    print(context)
+    
     return render(request, 'home.html', context)
 
 def flight_list(request):
