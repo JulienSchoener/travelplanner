@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <!-- CSS styles -->
+    <style>
+        body {
+            background: url('{% static "images/horse.jpg" %}');
+            background-size: 10% 10%;
+            background-repeat: no-repeat;
+            background-color: #f0fff0; /* Honeydew color */
+            color: #000080; /* Dark Blue */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            background-color: #f1f1f1;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            align-self: center;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'login' %}">Login</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- footer -->
+        <p>&copy; 2023 Jul. All rights reserved.</p>
+    </footer>
+</body>
+</html>
