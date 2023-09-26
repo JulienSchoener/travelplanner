@@ -16,7 +16,7 @@ Welcome to Travel Planner, your new travel companion! It's your personal schedul
 
 1. Clone the repository:
 ```
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/JulienSchoener/travelplanner.git
 ```
 
 2. Create a virtual environment and activate it:
