@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Flight, HotelBooking, Meeting, BusinessPartner
-from .forms import BusinessPartnerForm
+from .forms import BusinessPartnerForm, ProposeMeetingForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 
@@ -57,3 +57,32 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+def propose_meeting(request):
+    if request.method == 'POST':
+        form = ProposeMeetingForm(request.POST)
+        if form.is_valid():
+            meeting = form.save(commit=False)
+            # Check if the proposed meeting time is available.
+            overlapping_meetings = Meeting.objects.filter(
+                start_time__lt=meeting.end_time,
+                end_time__gt=meeting.start_time
+            )
+            overlapping_flights = Flight.objects.filter(
+                arrival__lt=meeting.end_time,
+                departure__gt=meeting.start_time
+            )
+            overlapping_bookings = HotelBooking.objects.filter(
+                check_in_date__lt=meeting.end_time,
+                check_out_date__gt=meeting.start_time
+            )
+            if overlapping_meetings.exists() or overlapping_flights.exists() or overlapping_bookings.exists():
+                # If the time is not available, show an error message.
+                form.add_error(None, "The proposed time is not available.")
+            else:
+                # If the time is available, save the meeting.
+                form.save()
+                return redirect('home')
+    else:
+        form = ProposeMeetingForm()
+    return render(request, 'add_meeting.html', {'form': form})

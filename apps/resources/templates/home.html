@@ -13,6 +13,8 @@
           {{ flight.arrival_location }} from {{ flight.departure|date:"F j, Y, g a" }} to 
           {{ flight.arrival|date:"F j, Y, g a" }}
         </li>
+        {% empty %}
+        <li>No flights scheduled.</li>
         {% endfor %}
       </ul>
 
